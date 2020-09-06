@@ -22,7 +22,7 @@ class ArquivoAudio:
 def construir_caminho(nome_arquivo: str):
     config = Config()
     caminho_aplicacao = config.get_propriedade('PATH')
-    return f'{caminho_aplicacao}feedback_sonoro/sounds/{nome_arquivo}.mp3'
+    return f'{caminho_aplicacao}/feedback_sonoro/sounds/{nome_arquivo}.mp3'
 
 
 def teste():

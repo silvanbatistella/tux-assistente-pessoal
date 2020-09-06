@@ -12,6 +12,7 @@ def carregar_configs(caminho_projeto):
 
 
 def get_caminho_projeto(caminho_projeto):
+    caminho_projeto += '/'
     if 'tux' in caminho_projeto:
         tamanho_caminho = len(caminho_projeto)
         posicaotux = caminho_projeto.index('/tux') + 4
@@ -25,12 +26,12 @@ class Config:
 
     def __init__(self, caminho_projeto=getcwd()):
         self.__configs = carregar_configs(caminho_projeto)
-        self.__existe_config()
+        self.__existe_config(caminho_projeto, 'PATH')
 
-    def __existe_config(self):
-        if not self.__configs['PATH']:
-            self.__configs['PATH'] = get_caminho_projeto()
-            arquivo = open('./config/config.yaml', 'w')
+    def __existe_config(self, caminho_projeto: str, path: str):
+        if not self.get_propriedade(path):
+            self.__configs['PATH'] = get_caminho_projeto(caminho_projeto)
+            arquivo = open(f'{caminho_projeto}/config/config.yaml', 'w')
             yaml.dump(self.__configs, arquivo)
             arquivo.close()
 
