@@ -7,16 +7,20 @@ O projeto consiste em gerar um assistente pessoal utilizando Python devido a sua
 
 ## Versionamento
 ### Atual - Feature mais recente
-- v **0.0.0** - Start do Projeto
+- v **0.1.0** - Feedback Sonoro inspirado em sons do Super Mario World
+
+### Descrição da feature mais recente
+Feedback Sonoro
+
 ### Versão e feature
 > Uso futuro
 
 ## Passos Futuros
-- [ ] Notificação de comandos Reconhecidos através de sons
+- [X] Notificação de comandos Reconhecidos através de sons
 - [ ] Conversor de  unidades
 - [ ] Configuração de integrações de forma centralizada
 - [ ] Integração com Voice Recognition
-- [ ]  Bater ponto no aplicativo PontoMais
+- [ ] Bater ponto no aplicativo PontoMais
 - [ ] Consultar Informações referente a tempo, notícias locais, etc.
 - [ ] Integração com Arduino
 - [ ] Executar comandos em Linux (Diversas Distros se possível for)
