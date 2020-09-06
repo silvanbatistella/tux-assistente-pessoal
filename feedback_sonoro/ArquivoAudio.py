@@ -1,16 +1,13 @@
 from os import path
 
-
-def teste():
-    arquivo_audio = ArquivoAudio('/home/batistella/lab/tux/feedback_sonoro/sounds/moeda.mp3')
-    print(arquivo_audio.get_path())
+from config import Config
 
 
 class ArquivoAudio:
     def __init__(self, nome_arquivo: str):
-        self.__path = nome_arquivo
+        self.__path = construir_caminho(nome_arquivo)
         if not self.__arquivo_existe():
-            self.__set_path('/home/batistella/lab/tux/feedback_sonoro/sounds/erro.mp3')
+            self.__set_path(construir_caminho('erro'))
 
     def __arquivo_existe(self):
         return path.exists(self.get_path())
@@ -20,6 +17,17 @@ class ArquivoAudio:
 
     def __set_path(self, caminho: str):
         self.__path = caminho
+
+
+def construir_caminho(nome_arquivo: str):
+    config = Config()
+    caminho_aplicacao = config.get_propriedade('PATH')
+    return f'{caminho_aplicacao}feedback_sonoro/sounds/{nome_arquivo}.mp3'
+
+
+def teste():
+    arquivo_audio = ArquivoAudio('moeda')
+    print(arquivo_audio.get_path())
 
 
 if __name__ == '__main__':
