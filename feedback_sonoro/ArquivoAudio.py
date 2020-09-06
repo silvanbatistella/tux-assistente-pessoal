@@ -10,7 +10,7 @@ class ArquivoAudio:
     def __init__(self, nome_arquivo: str):
         self.__path = nome_arquivo
         if not self.__arquivo_existe():
-            self.__set_path('home/batistella/lab/tux/feedback_sonoro/sounds/erro.mp3')
+            self.__set_path('/home/batistella/lab/tux/feedback_sonoro/sounds/erro.mp3')
 
     def __arquivo_existe(self):
         return path.exists(self.get_path())
